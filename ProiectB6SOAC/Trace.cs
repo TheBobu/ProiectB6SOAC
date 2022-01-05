@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace ProiectB6SOAC
 {
@@ -18,7 +14,7 @@ namespace ProiectB6SOAC
         {
             TipBranch = new List<string>();
             PC = new List<int>();
-            AdrDest = new List<int>();    
+            AdrDest = new List<int>();
             Length = 0;
         }
     }

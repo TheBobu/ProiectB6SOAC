@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ProiectB6SOAC
+﻿namespace ProiectB6SOAC
 {
     public class Register
     {
         private int size;
         private int[] register;
+
         public Register(int n)
         {
             size = n;
@@ -32,7 +27,6 @@ namespace ProiectB6SOAC
         {
             for (int i = 0; i < size; i++)
                 register[i] = 0;
-
         }
     }
 }

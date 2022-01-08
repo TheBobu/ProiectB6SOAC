@@ -73,6 +73,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Benchmarks\Stanford\FBUBBLE.TRA" />
+    <None Include="Benchmarks\Stanford\FMATRIX.TRA" />
+    <None Include="Benchmarks\Stanford\FPERM.TRA" />
+    <None Include="Benchmarks\Stanford\FPUZZLE.TRA" />
+    <None Include="Benchmarks\Stanford\FQUEENS.TRA" />
+    <None Include="Benchmarks\Stanford\FSORT.TRA" />
+    <None Include="Benchmarks\Stanford\FTOWER.TRA" />
+    <None Include="Benchmarks\Stanford\FTREE.TRA" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -85,6 +93,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Benchmarks\Spec2000\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

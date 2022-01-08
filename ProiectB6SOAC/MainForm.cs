@@ -12,6 +12,7 @@ namespace ProiectB6SOAC
 {
     public partial class MainForm : Form
     {
+        public string SelectedPath { get; set; }
         public List<string> Files { get; set; }
         public List<Trace> Traces { get; set; }
         public Predictor Predictor { get; set; }
@@ -26,33 +27,43 @@ namespace ProiectB6SOAC
 
         private void btnLoadStanford_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(Environment.CurrentDirectory);
-            string[] stanfordFilenames =
-                Directory
-                .GetFiles(Path.GetFullPath(@"..\Debug\Benchmarks\Stanford"), "*.TRA")
-                .Select(Path.GetFileName)
-                .ToArray();
-
-            Files = stanfordFilenames.ToList();
-            checkedListBoxFiles.Items.AddRange(stanfordFilenames);
-
-            isStanford = true;
-            isSpec2000 = false;
+            if (Directory.Exists(SelectedPath + @"\Stanford"))
+            {
+                string[] stanfordFilenames =
+                    Directory
+                    .GetFiles(Path.GetFullPath(SelectedPath + @"\Stanford\"), "*.TRA")
+                    .Select(Path.GetFileName)
+                    .ToArray();
+                Files = stanfordFilenames.ToList();
+                checkedListBoxFiles.Items.AddRange(stanfordFilenames);
+                isStanford = true;
+                isSpec2000 = false;
+            }
+            else
+            {
+                MessageBox.Show("The Benchmark folder doesn't contain Standford traces folder");
+            }
         }
 
         private void btnLoadSpec_Click(object sender, EventArgs e)
         {
-            string[] specFilenames =
-                Directory
-                .GetFiles(Path.GetFullPath(@"..\Debug\Benchmarks\Spec2000"), "*.TRA")
-                .Select(Path.GetFileName)
-                .ToArray();
+            if (Directory.Exists(SelectedPath + @"\Spec2000"))
+            {
+                string[] specFilenames =
+                    Directory
+                    .GetFiles(Path.GetFullPath(SelectedPath + @"\Spec2000\"), "*.TRA")
+                    .Select(Path.GetFileName)
+                    .ToArray();
+                Files = specFilenames.ToList();
+                checkedListBoxFiles.Items.AddRange(specFilenames);
 
-            Files = specFilenames.ToList();
-            checkedListBoxFiles.Items.AddRange(specFilenames);
-
-            isStanford = false;
-            isSpec2000 = true;
+                isStanford = false;
+                isSpec2000 = true;
+            }
+            else
+            {
+                MessageBox.Show("The Benchmark folder doesn't contain Spec2000 traces folder");
+            }
         }
 
         private void ReadTraces()
@@ -66,11 +77,11 @@ namespace ProiectB6SOAC
                 {
                     if (isSpec2000)
                     {
-                        traceReader = new TextFieldParser(Path.GetFullPath(@"..\Debug\Benchmarks\Spec2000\") + file);
+                        traceReader = new TextFieldParser((SelectedPath+@"\Spec2000\") + file);
                     }
                     else if (isStanford)
                     {
-                        traceReader = new TextFieldParser(Path.GetFullPath(@"..\Debug\Benchmarks\Stanford\") + file);
+                        traceReader = new TextFieldParser(Path.GetFullPath(SelectedPath + @"\Stanford\") + file);
                     }
                     else
                     {
@@ -102,6 +113,10 @@ namespace ProiectB6SOAC
 
         private void btnStart_Click(object sender, EventArgs e)
         {
+            button1.Enabled = false;
+            btnStart.Enabled = false;
+            btnLoadSpec.Enabled = false;
+            btnLoadStanford.Enabled = false;
             ReadTraces();
             if (Traces.Count > 0)
             {
@@ -113,6 +128,10 @@ namespace ProiectB6SOAC
             {
                 MessageBox.Show("Please select a trace to begin.");
             }
+            btnStart.Enabled = true;
+            btnLoadStanford.Enabled = true;
+            btnLoadSpec.Enabled = true;
+            button1.Enabled = true;
         }
 
         public void DisplayResults()
@@ -136,6 +155,18 @@ namespace ProiectB6SOAC
                 richTextBoxOutput.AppendText("Branch-uri taken: " + result.TakenBranches + Environment.NewLine);
                 richTextBoxOutput.AppendText("Branch-uri not taken: " + result.NotTakenBranches + Environment.NewLine);
                 richTextBoxOutput.AppendText("---------------------------------------------------------" + Environment.NewLine);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (FolderBrowserDialog ofd = new FolderBrowserDialog())
+            {
+                ofd.SelectedPath = Environment.CurrentDirectory;
+                if (ofd.ShowDialog().Equals(DialogResult.OK))
+                {
+                    SelectedPath = Path.GetFullPath(ofd.SelectedPath);
+                }
             }
         }
     }

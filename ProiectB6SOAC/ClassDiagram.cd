@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ProiectB6SOAC.Trace">
+    <Position X="4.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAIAAAAAEAAARAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Trace.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProiectB6SOAC.ResultData">
+    <Position X="2.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAQAAABAAAAIAAQAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>ResultData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProiectB6SOAC.PredictorTable">
+    <Position X="2.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PredictorTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProiectB6SOAC.Predictor">
+    <Position X="0.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAEAAAAAAACAABQBAAAAAAAAIEAAo=</HashCode>
+      <FileName>Predictor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProiectB6SOAC.Register">
+    <Position X="4.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAQAIAAAAAAAAAAAAAQAQAAAAAAAAA=</HashCode>
+      <FileName>Register.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

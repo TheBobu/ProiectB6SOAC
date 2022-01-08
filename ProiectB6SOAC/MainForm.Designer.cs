@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.btnStart = new System.Windows.Forms.Button();
             this.checkedListBoxFiles = new System.Windows.Forms.CheckedListBox();
             this.chartAccuracy = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -50,7 +50,7 @@
             // btnStart
             // 
             this.btnStart.Location = new System.Drawing.Point(556, 14);
-            this.btnStart.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnStart.Margin = new System.Windows.Forms.Padding(4);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(107, 32);
             this.btnStart.TabIndex = 0;
@@ -63,25 +63,25 @@
             this.checkedListBoxFiles.CheckOnClick = true;
             this.checkedListBoxFiles.FormattingEnabled = true;
             this.checkedListBoxFiles.Location = new System.Drawing.Point(16, 54);
-            this.checkedListBoxFiles.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.checkedListBoxFiles.Margin = new System.Windows.Forms.Padding(4);
             this.checkedListBoxFiles.Name = "checkedListBoxFiles";
             this.checkedListBoxFiles.Size = new System.Drawing.Size(261, 344);
             this.checkedListBoxFiles.TabIndex = 1;
             // 
             // chartAccuracy
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chartAccuracy.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chartAccuracy.Legends.Add(legend4);
+            chartArea1.Name = "ChartArea1";
+            this.chartAccuracy.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartAccuracy.Legends.Add(legend1);
             this.chartAccuracy.Location = new System.Drawing.Point(287, 54);
-            this.chartAccuracy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chartAccuracy.Margin = new System.Windows.Forms.Padding(4);
             this.chartAccuracy.Name = "chartAccuracy";
             this.chartAccuracy.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chartAccuracy.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartAccuracy.Series.Add(series1);
             this.chartAccuracy.Size = new System.Drawing.Size(764, 591);
             this.chartAccuracy.TabIndex = 2;
             this.chartAccuracy.Text = "chart1";
@@ -89,7 +89,7 @@
             // richTextBoxOutput
             // 
             this.richTextBoxOutput.Location = new System.Drawing.Point(16, 417);
-            this.richTextBoxOutput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.richTextBoxOutput.Margin = new System.Windows.Forms.Padding(4);
             this.richTextBoxOutput.Name = "richTextBoxOutput";
             this.richTextBoxOutput.Size = new System.Drawing.Size(261, 227);
             this.richTextBoxOutput.TabIndex = 3;
@@ -98,7 +98,7 @@
             // btnLoadStanford
             // 
             this.btnLoadStanford.Location = new System.Drawing.Point(195, 15);
-            this.btnLoadStanford.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLoadStanford.Margin = new System.Windows.Forms.Padding(4);
             this.btnLoadStanford.Name = "btnLoadStanford";
             this.btnLoadStanford.Size = new System.Drawing.Size(164, 31);
             this.btnLoadStanford.TabIndex = 4;
@@ -109,7 +109,7 @@
             // btnLoadSpec
             // 
             this.btnLoadSpec.Location = new System.Drawing.Point(367, 14);
-            this.btnLoadSpec.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLoadSpec.Margin = new System.Windows.Forms.Padding(4);
             this.btnLoadSpec.Name = "btnLoadSpec";
             this.btnLoadSpec.Size = new System.Drawing.Size(181, 31);
             this.btnLoadSpec.TabIndex = 5;
@@ -120,7 +120,7 @@
             // numericUpDownTables
             // 
             this.numericUpDownTables.Location = new System.Drawing.Point(960, 15);
-            this.numericUpDownTables.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDownTables.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDownTables.Maximum = new decimal(new int[] {
             12,
             0,
@@ -149,7 +149,7 @@
             0,
             131072});
             this.numericUpDownAlfa.Location = new System.Drawing.Point(740, 14);
-            this.numericUpDownAlfa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.numericUpDownAlfa.Margin = new System.Windows.Forms.Padding(4);
             this.numericUpDownAlfa.Maximum = new decimal(new int[] {
             20,
             0,
@@ -215,10 +215,10 @@
             this.Controls.Add(this.chartAccuracy);
             this.Controls.Add(this.checkedListBoxFiles);
             this.Controls.Add(this.btnStart);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "SimulatorOGEHL";
             ((System.ComponentModel.ISupportInitialize)(this.chartAccuracy)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTables)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAlfa)).EndInit();

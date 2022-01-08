@@ -70,24 +70,25 @@ namespace ProiectB6SOAC
                     else
                     {
                         incorrect++;
+                    }
 
+                    if (!prediction.Equals(outcome) || (predictionValue < threshold))
+                    {
                         //Update Tables
-                        if (predictionValue < threshold)
+                        for (int j = 1; j < M; j++)
                         {
-                            for (int j = 1; j < M; j++)
+                            var index = IndexingFunction(trace.PC[i], j);
+                            if (outcome == 1)
                             {
-                                var index = IndexingFunction(trace.PC[i], j);
-                                if (outcome == 1)
-                                {
-                                    T[j].table[index] += 1;
-                                }
-                                else
-                                {
-                                    T[j].table[index] -= 1;
-                                }
+                                T[j].table[index] += 1;
+                            }
+                            else
+                            {
+                                T[j].table[index] -= 1;
                             }
                         }
                     }
+
                     HRG.AddNewEntry(outcome);
                 }
 
